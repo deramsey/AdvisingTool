@@ -1,0 +1,516 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+
+input[type=radio] {
+	display: none;
+}
+
+input[type=radio] + label {
+	border: 1px solid #dddddd;
+	padding: 5px;
+}
+
+input[type=radio]:checked + label {
+	color: #0b91de;
+	border: 3px solid #0b91de;
+	font-weight: bold;
+}
+
+input[type=checkbox]:checked + label {
+	color: #eee;
+}
+
+input[type=checkbox] + label{
+	padding: 10px;
+}
+
+footer{
+	background-color: #eee;
+	text-align: center;
+	margin-top: 60px;
+	padding: 5px;
+}
+
+#sname {
+	width: 100%;
+	height: 50px;
+	font-size: 30px;
+}
+
+@media print{
+* {
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+
+input[type=checkbox]:checked + label {
+	color: #eee !important;
+}
+
+input[type=checkbox] {
+	display: none !important;
+}
+#sname {
+	border: 0px !important;
+}
+
+button {
+	display: none !important;
+}
+
+}
+</style>
+
+<script>
+$( document ).ready(function(){
+
+$(".dmform, .isform, .nmform, .ssform, .wdform").hide();
+
+	$( ".progSort" ).on( 'click', function() {
+          var progChoice = $( "input[name=program]:checked" ).val();
+
+          if (progChoice === "dm"){
+			$(".isform, .nmform, .ssform, .wdform").hide();
+			$(".dmform").show();
+          }
+          
+          else if (progChoice === "is"){
+			$(".nmform, .ssform, .wdform, .dmform").hide();
+			$(".isform").show();
+          }
+
+          else if (progChoice === "nm"){
+			$(".ssform, .wdform, .dmform, .isform").hide();
+			$(".nmform").show();
+          }
+          else if (progChoice === "ss"){
+			$(".wdform, .dmform, .isform, .nmform").hide();
+			$(".ssform").show();
+          }
+
+          else {
+			$(".ssform, .dmform, .isform, .nmform").hide();
+			$(".wdform").show();
+          };
+          return false;
+});
+
+});
+</script>
+
+
+
+</head>
+
+<body>
+<header class="jumbotron"><h1 class="display-4" style="margin-left: 30px;"><i class="fas fa-graduation-cap"></i> Information Technology Degree Progress</h1></header>
+<div class="container">
+<form class="progName" style="margin-bottom: 30px;" method="_POST">
+<input type="text" name="sname" id="sname" placeholder="Student Name"><br><br>
+<fieldset>
+<legend>Select IT Program:</legend>
+<input type="radio" name="program" value="dm" id="dm"><label for="dm"> Data Management</label><br>
+<input type="radio" name="program" value="is" id="is"><label for="is"> Information and Support</label><br>
+<input type="radio" name="program" value="nm" id="nm"><label for="nm"> Network Management</label><br>
+<input type="radio" name="program" value="ss" id="ss"><label for="ss"> Systems Security</label><br>
+<input type="radio" name="program" value="wd" id="wd"><label for="wd"> Web Administration and Design</label><br><br>
+<button class="progSort">Submit</button>
+</fieldset>
+</form>
+
+<form class="dmform">
+<fieldset>
+<legend>Major Courses</legend>
+<input type="checkbox" name="program" value="dmm" id="dmm"><label for="dmmj1"> CIS 110</label>
+<input type="checkbox" name="program" value="dmm" id="dmm"><label for="dmmj2"> CTI 110</label>
+<input type="checkbox" name="program" value="dmm" id="dmm"><label for="dmmj3"> CTI 120</label>
+<input type="checkbox" name="program" value="dmm" id="dmm"><label for="dmmj4"> CTS 115</label>
+<input type="checkbox" name="program" value="dmm" id="dmm"><label for="dmmj5"> CTS 120</label>
+<input type="checkbox" name="program" value="dmm" id="dmm"><label for="dmmj6"> CTS 130</label>
+<input type="checkbox" name="program" value="dmm" id="dmm"><label for="dmmj7"> CTS 230</label>
+<input type="checkbox" name="program" value="dmm" id="dmm"><label for="dmmj8"> DBA 110</label>
+<input type="checkbox" name="program" value="dmm" id="dmm"><label for="dmmj9"> DBA 115</label>
+<input type="checkbox" name="program" value="dmm" id="dmm"><label for="dmmj10"> NOS 110</label>
+<input type="checkbox" name="program" value="dmm" id="dmm"><label for="dmmj11"> OST 130</label>
+<input type="checkbox" name="program" value="dmm" id="dmm"><label for="dmmj12"> OST 181</label><br>
+<input type="checkbox" name="program" value="dmm" id="dmm"><label for="dmmj13"> OST 184</label>
+<input type="checkbox" name="program" value="dmm" id="dmm"><label for="dmmj14"> WEB 214</label>
+<input type="checkbox" name="program" value="dmm" id="dmm"><label for="dmmj15"> WEB 287</label>
+
+</fieldset>
+
+<fieldset>
+<legend>Major Electives</legend>
+<input type="checkbox" name="program" value="dme" id="dme"><label for="dmej1"> ACC 120</label>
+<input type="checkbox" name="program" value="dme" id="dme"><label for="dmej2"> CTS 217</label>
+<input type="checkbox" name="program" value="dme" id="dme"><label for="dmej3"> NET 125</label>
+<input type="checkbox" name="program" value="dme" id="dme"><label for="dmej4"> SEC 110</label>
+<input type="checkbox" name="program" value="dme" id="dme"><label for="dmej5"> WBL 111</label>
+<input type="checkbox" name="program" value="dme" id="dme"><label for="dmej6"> WBL 112</label>
+<input type="checkbox" name="program" value="dme" id="dme"><label for="dmej7"> WEB 140</label>
+
+
+</fieldset>
+
+<fieldset>
+<legend>General Education</legend>
+<input type="checkbox" name="program" value="dmge" id="dmge"><label for="dmgej1"> ACA 115</label>
+
+</fieldset>
+
+
+<fieldset>
+<legend>Communications</legend>
+<input type="checkbox" name="program" value="dme" id="dme"><label for="dmej1"> COM 110/COM 231</label>
+<input type="checkbox" name="program" value="dme" id="dme"><label for="dmej2"> ENG 111</label>
+
+</fieldset>
+
+<fieldset>
+<legend>Humanities/Fine Arts (Select 1)</legend>
+<input type="checkbox" name="program" value="dmh" id="dmh"><label for="dmhj1"> ART 111</label>
+<input type="checkbox" name="program" value="dmh" id="dmh"><label for="dmhj2"> HUM 110</label>
+<input type="checkbox" name="program" value="dmh" id="dmh"><label for="dmhj3"> HUM 115</label>
+<input type="checkbox" name="program" value="dmh" id="dmh"><label for="dmhj4"> MUS 110</label>
+
+</fieldset>
+
+<fieldset>
+<legend>Social Sciences (Select 1)</legend>
+<input type="checkbox" name="program" value="dmh" id="dmh"><label for="dmhj1"> PSY 150</label>
+<input type="checkbox" name="program" value="dmh" id="dmh"><label for="dmhj2"> SOC 210</label>
+
+</fieldset>
+
+<fieldset>
+<legend>Mathematics</legend>
+<input type="checkbox" name="program" value="dmmat" id="dmmat"><label for="dmmatj1"> MAT 121</label>
+
+</fieldset>
+<br>
+<button class="print" onclick="printForm();">Print</button>
+</form>
+
+<form class="isform">
+<fieldset>
+<legend>Major Courses</legend>
+<input type="checkbox" name="program" value="ism" id="ism"><label for="ismj1"> CTI 110</label>
+<input type="checkbox" name="program" value="ism" id="ism"><label for="ismj2"> CTI 120</label>
+<input type="checkbox" name="program" value="ism" id="ism"><label for="ismj3"> CSC 151</label>
+<input type="checkbox" name="program" value="ism" id="ism"><label for="ismj4"> CTS 115</label>
+<input type="checkbox" name="program" value="ism" id="ism"><label for="ismj5"> CTS 120</label>
+<input type="checkbox" name="program" value="ism" id="ism"><label for="ismj6"> CTS 217</label>
+<input type="checkbox" name="program" value="ism" id="ism"><label for="ismj7"> CTS 220</label>
+<input type="checkbox" name="program" value="ism" id="ism"><label for="ismj8"> DBA 110</label>
+<input type="checkbox" name="program" value="ism" id="ism"><label for="ismj9"> NET 125</label>
+<input type="checkbox" name="program" value="ism" id="ism"><label for="ismj10"> NOS 110</label>
+<input type="checkbox" name="program" value="ism" id="ism"><label for="ismj11"> NOS 120</label>
+<input type="checkbox" name="program" value="ism" id="ism"><label for="ismj12"> NOS 130</label><br>
+<input type="checkbox" name="program" value="ism" id="ism"><label for="ismj13"> NOS 230</label>
+<input type="checkbox" name="program" value="ism" id="ism"><label for="ismj14"> SEC 110</label>
+<input type="checkbox" name="program" value="ism" id="ism"><label for="ismj15"> WEB 287</label>
+
+</fieldset>
+
+<fieldset>
+<legend>Major Electives</legend>
+<input type="checkbox" name="program" value="ise" id="ise"><label for="isej1"> CTS 130</label>
+<input type="checkbox" name="program" value="ise" id="ise"><label for="isej2"> CTS 230</label>
+<input type="checkbox" name="program" value="ise" id="ise"><label for="isej3"> DBA 115</label>
+<input type="checkbox" name="program" value="ise" id="ise"><label for="isej4"> MIT 110</label>
+<input type="checkbox" name="program" value="ise" id="ise"><label for="isej5"> NOS 220</label>
+<input type="checkbox" name="program" value="ise" id="ise"><label for="isej6"> WBL 111</label>
+<input type="checkbox" name="program" value="ise" id="ise"><label for="isej7"> WBL 112</label>
+<input type="checkbox" name="program" value="ise" id="ise"><label for="isej8"> WEB 140</label>
+<input type="checkbox" name="program" value="ise" id="ise"><label for="isej9"> WEB 210</label>
+<input type="checkbox" name="program" value="ise" id="ise"><label for="isej10"> WEB 214</label>
+
+
+</fieldset>
+
+<fieldset>
+<legend>General Education</legend>
+<input type="checkbox" name="program" value="isge" id="isge"><label for="isgej1"> ACA 115</label>
+
+</fieldset>
+
+
+<fieldset>
+<legend>Communications</legend>
+<input type="checkbox" name="program" value="ise" id="ise"><label for="isej1"> COM 110/COM 231</label>
+<input type="checkbox" name="program" value="ise" id="ise"><label for="isej2"> ENG 111</label>
+
+</fieldset>
+
+<fieldset>
+<legend>Humanities/Fine Arts (Select 1)</legend>
+<input type="checkbox" name="program" value="ish" id="ish"><label for="ishj1"> ART 111</label>
+<input type="checkbox" name="program" value="ish" id="ish"><label for="ishj2"> HUM 110</label>
+<input type="checkbox" name="program" value="ish" id="ish"><label for="ishj3"> HUM 115</label>
+<input type="checkbox" name="program" value="ish" id="ish"><label for="ishj4"> MUS 110</label>
+
+</fieldset>
+
+<fieldset>
+<legend>Social Sciences (Select 1)</legend>
+<input type="checkbox" name="program" value="ish" id="ish"><label for="ishj1"> PSY 150</label>
+<input type="checkbox" name="program" value="ish" id="ish"><label for="ishj2"> SOC 210</label>
+
+</fieldset>
+
+<fieldset>
+<legend>Mathematics</legend>
+<input type="checkbox" name="program" value="ismat" id="ismat"><label for="ismatj1"> MAT 121</label>
+
+</fieldset>
+<br>
+<button class="print" onclick="printForm();">Print</button>
+</form>
+
+<form class="nmform">
+<fieldset>
+<legend>Major Courses</legend>
+<input type="checkbox" name="program" value="nmm" id="nmm"><label for="nmmj1"> CTI 110</label>
+<input type="checkbox" name="program" value="nmm" id="nmm"><label for="nmmj2"> CTI 120</label>
+<input type="checkbox" name="program" value="nmm" id="nmm"><label for="nmmj3"> CTS 115</label>
+<input type="checkbox" name="program" value="nmm" id="nmm"><label for="nmmj4"> CTS 120</label>
+<input type="checkbox" name="program" value="nmm" id="nmm"><label for="nmmj5"> CTS 217</label>
+<input type="checkbox" name="program" value="nmm" id="nmm"><label for="nmmj6"> NET 125</label>
+<input type="checkbox" name="program" value="nmm" id="nmm"><label for="nmmj7"> NET 126</label>
+<input type="checkbox" name="program" value="nmm" id="nmm"><label for="nmmj8"> NET 225</label>
+<input type="checkbox" name="program" value="nmm" id="nmm"><label for="nmmj9"> NET 226</label>
+<input type="checkbox" name="program" value="nmm" id="nmm"><label for="nmmj10"> NOS 110</label>
+<input type="checkbox" name="program" value="nmm" id="nmm"><label for="nmmj11"> NOS 120</label>
+<input type="checkbox" name="program" value="nmm" id="nmm"><label for="nmmj12"> NOS 130</label><br>
+<input type="checkbox" name="program" value="nmm" id="nmm"><label for="nmmj13"> NOS 230</label>
+<input type="checkbox" name="program" value="nmm" id="nmm"><label for="nmmj14"> SEC 110</label>
+<input type="checkbox" name="program" value="nmm" id="nmm"><label for="nmmj15"> WEB 287</label>
+
+</fieldset>
+
+<fieldset>
+<legend>Major Electives</legend>
+<input type="checkbox" name="program" value="nme" id="nme"><label for="nmej1"> CTI 140</label>
+<input type="checkbox" name="program" value="nme" id="nme"><label for="nmej2"> CTI 141</label>
+<input type="checkbox" name="program" value="nme" id="nme"><label for="nmej3"> CTI 240</label>
+<input type="checkbox" name="program" value="nme" id="nme"><label for="nmej4"> NOS 220</label>
+<input type="checkbox" name="program" value="nme" id="nme"><label for="nmej5"> SEC 150</label>
+<input type="checkbox" name="program" value="nme" id="nme"><label for="nmej6"> SEC 160</label>
+<input type="checkbox" name="program" value="nme" id="nme"><label for="nmej7"> WBL 111</label>
+<input type="checkbox" name="program" value="nme" id="nme"><label for="nmej8"> WBL 112</label>
+
+
+</fieldset>
+
+<fieldset>
+<legend>General Education</legend>
+<input type="checkbox" name="program" value="nmge" id="nmge"><label for="nmgej1"> ACA 115</label>
+
+</fieldset>
+
+
+<fieldset>
+<legend>Communications</legend>
+<input type="checkbox" name="program" value="nme" id="nme"><label for="nmej1"> COM 110/COM 231</label>
+<input type="checkbox" name="program" value="nme" id="nme"><label for="nmej2"> ENG 111</label>
+
+</fieldset>
+
+<fieldset>
+<legend>Humanities/Fine Arts (Select 1)</legend>
+<input type="checkbox" name="program" value="nmh" id="nmh"><label for="nmhj1"> ART 111</label>
+<input type="checkbox" name="program" value="nmh" id="nmh"><label for="nmhj2"> HUM 110</label>
+<input type="checkbox" name="program" value="nmh" id="nmh"><label for="nmhj3"> HUM 115</label>
+<input type="checkbox" name="program" value="nmh" id="nmh"><label for="nmhj4"> MUS 110</label>
+
+</fieldset>
+
+<fieldset>
+<legend>Social Sciences (Select 1)</legend>
+<input type="checkbox" name="program" value="nmh" id="nmh"><label for="nmhj1"> PSY 150</label>
+<input type="checkbox" name="program" value="nmh" id="nmh"><label for="nmhj2"> SOC 210</label>
+
+</fieldset>
+
+<fieldset>
+<legend>Mathematics</legend>
+<input type="checkbox" name="program" value="nmmat" id="nmmat"><label for="nmmatj1"> MAT 121</label>
+
+</fieldset>
+<br>
+<button class="print" onclick="printForm();">Print</button>
+</form>
+
+<form class="ssform">
+<fieldset>
+<legend>Major Courses</legend>
+<input type="checkbox" name="program" value="ssm" id="ssm"><label for="ssmj1"> CTI 110</label>
+<input type="checkbox" name="program" value="ssm" id="ssm"><label for="ssmj2"> CTI 120</label>
+<input type="checkbox" name="program" value="ssm" id="ssm"><label for="ssmj3"> CTS 115</label>
+<input type="checkbox" name="program" value="ssm" id="ssm"><label for="ssmj4"> CTS 120</label>
+<input type="checkbox" name="program" value="ssm" id="ssm"><label for="ssmj5"> NET 125</label>
+<input type="checkbox" name="program" value="ssm" id="ssm"><label for="ssmj6"> NET 126</label>
+<input type="checkbox" name="program" value="ssm" id="ssm"><label for="ssmj7"> NOS 110</label>
+<input type="checkbox" name="program" value="ssm" id="ssm"><label for="ssmj8"> NOS 120</label>
+<input type="checkbox" name="program" value="ssm" id="ssm"><label for="ssmj9"> SEC 110</label>
+<input type="checkbox" name="program" value="ssm" id="ssm"><label for="ssmj10"> NOS 110</label>
+<input type="checkbox" name="program" value="ssm" id="ssm"><label for="ssmj11"> SEC 150</label>
+<input type="checkbox" name="program" value="ssm" id="ssm"><label for="ssmj12"> SEC 160</label><br>
+<input type="checkbox" name="program" value="ssm" id="ssm"><label for="ssmj13"> SEC 210</label>
+<input type="checkbox" name="program" value="ssm" id="ssm"><label for="ssmj14"> SEC 260</label>
+<input type="checkbox" name="program" value="ssm" id="ssm"><label for="ssmj15"> WEB 287</label>
+
+</fieldset>
+
+<fieldset>
+<legend>Major Electives</legend>
+<input type="checkbox" name="program" value="sse" id="sse"><label for="ssej1"> CTI 140</label>
+<input type="checkbox" name="program" value="sse" id="sse"><label for="ssej2"> CTI 141</label>
+<input type="checkbox" name="program" value="sse" id="sse"><label for="ssej3"> CTI 240</label>
+<input type="checkbox" name="program" value="sse" id="sse"><label for="ssej4"> DBA 110</label>
+<input type="checkbox" name="program" value="sse" id="sse"><label for="ssej5"> NET 225</label>
+<input type="checkbox" name="program" value="sse" id="sse"><label for="ssej6"> NET 226</label>
+<input type="checkbox" name="program" value="sse" id="sse"><label for="ssej7"> NOS 220</label>
+<input type="checkbox" name="program" value="sse" id="sse"><label for="ssej8"> WBL 111</label>
+<input type="checkbox" name="program" value="sse" id="sse"><label for="ssej9"> WBL 112</label>
+
+
+</fieldset>
+
+<fieldset>
+<legend>General Education</legend>
+<input type="checkbox" name="program" value="ssge" id="ssge"><label for="ssgej1"> ACA 115</label>
+
+</fieldset>
+
+
+<fieldset>
+<legend>Communications</legend>
+<input type="checkbox" name="program" value="sse" id="sse"><label for="ssej1"> COM 110/COM 231</label>
+<input type="checkbox" name="program" value="sse" id="sse"><label for="ssej2"> ENG 111</label>
+
+</fieldset>
+
+<fieldset>
+<legend>Humanities/Fine Arts (Select 1)</legend>
+<input type="checkbox" name="program" value="ssh" id="ssh"><label for="sshj1"> ART 111</label>
+<input type="checkbox" name="program" value="ssh" id="ssh"><label for="sshj2"> HUM 110</label>
+<input type="checkbox" name="program" value="ssh" id="ssh"><label for="sshj3"> HUM 115</label>
+<input type="checkbox" name="program" value="ssh" id="ssh"><label for="sshj4"> MUS 110</label>
+
+</fieldset>
+
+<fieldset>
+<legend>Social Sciences (Select 1)</legend>
+<input type="checkbox" name="program" value="ssh" id="ssh"><label for="sshj1"> PSY 150</label>
+<input type="checkbox" name="program" value="ssh" id="ssh"><label for="sshj2"> SOC 210</label>
+
+</fieldset>
+
+<fieldset>
+<legend>Mathematics</legend>
+<input type="checkbox" name="program" value="ssmat" id="ssmat"><label for="ssmatj1"> MAT 121</label>
+
+</fieldset>
+<br>
+<button class="print" onclick="printForm();">Print</button>
+</form>
+
+<form class="wdform">
+<fieldset>
+<legend>Major Courses</legend>
+<input type="checkbox" name="program" value="wdm" id="wdm"><label for="wdmj1"> CSC 151</label>
+<input type="checkbox" name="program" value="wdm" id="wdm"><label for="wdmj2"> CTI 110</label>
+<input type="checkbox" name="program" value="wdm" id="wdm"><label for="wdmj3"> CTI 120</label>
+<input type="checkbox" name="program" value="wdm" id="wdm"><label for="wdmj4"> CTS 115</label>
+<input type="checkbox" name="program" value="wdm" id="wdm"><label for="wdmj5"> CTS 120</label>
+<input type="checkbox" name="program" value="wdm" id="wdm"><label for="wdmj6"> DBA 110</label>
+<input type="checkbox" name="program" value="wdm" id="wdm"><label for="wdmj7"> NET 125</label>
+<input type="checkbox" name="program" value="wdm" id="wdm"><label for="wdmj8"> NOS 110</label>
+<input type="checkbox" name="program" value="wdm" id="wdm"><label for="wdmj9"> NOS 120</label>
+<input type="checkbox" name="program" value="wdm" id="wdm"><label for="wdmj10"> WEB 115</label>
+<input type="checkbox" name="program" value="wdm" id="wdm"><label for="wdmj11"> WEB 140</label>
+<input type="checkbox" name="program" value="wdm" id="wdm"><label for="wdmj12"> WEB 210</label><br>
+<input type="checkbox" name="program" value="wdm" id="wdm"><label for="wdmj13"> WEB 214</label>
+<input type="checkbox" name="program" value="wdm" id="wdm"><label for="wdmj14"> WEB 225</label>
+<input type="checkbox" name="program" value="wdm" id="wdm"><label for="wdmj15"> WEB 250</label>
+<input type="checkbox" name="program" value="wdm" id="wdm"><label for="wdmj16"> WEB 287</label>
+
+
+</fieldset>
+
+<fieldset>
+<legend>Major Electives</legend>
+<input type="checkbox" name="program" value="wde" id="wde"><label for="wdej1"> CTI 140</label>
+<input type="checkbox" name="program" value="wde" id="wde"><label for="wdej2"> CTI 141</label>
+<input type="checkbox" name="program" value="wde" id="wde"><label for="wdej3"> CTI 240</label>
+<input type="checkbox" name="program" value="wde" id="wde"><label for="wdej4"> DBA 115</label>
+<input type="checkbox" name="program" value="wde" id="wde"><label for="wdej5"> NOS 220</label>
+<input type="checkbox" name="program" value="wde" id="wde"><label for="wdej6"> SEC 110</label>
+<input type="checkbox" name="program" value="wde" id="wde"><label for="wdej7"> WBL 111</label>
+<input type="checkbox" name="program" value="wde" id="wde"><label for="wdej8"> WBL 112</label>
+
+</fieldset>
+
+<fieldset>
+<legend>General Education</legend>
+<input type="checkbox" name="program" value="wdge" id="wdge"><label for="wdgej1"> ACA 115</label>
+
+</fieldset>
+
+
+<fieldset>
+<legend>Communications</legend>
+<input type="checkbox" name="program" value="wde" id="wde"><label for="wdej1"> COM 110/COM 231</label>
+<input type="checkbox" name="program" value="wde" id="wde"><label for="wdej2"> ENG 111</label>
+
+</fieldset>
+
+<fieldset>
+<legend>Humanities/Fine Arts (Select 1)</legend>
+<input type="checkbox" name="program" value="wdh" id="wdh"><label for="wdhj1"> ART 111</label>
+<input type="checkbox" name="program" value="wdh" id="wdh"><label for="wdhj2"> HUM 110</label>
+<input type="checkbox" name="program" value="wdh" id="wdh"><label for="wdhj3"> HUM 115</label>
+<input type="checkbox" name="program" value="wdh" id="wdh"><label for="wdhj4"> MUS 110</label>
+
+</fieldset>
+
+<fieldset>
+<legend>Social Sciences (Select 1)</legend>
+<input type="checkbox" name="program" value="wdh" id="wdh"><label for="wdhj1"> PSY 150</label>
+<input type="checkbox" name="program" value="wdh" id="wdh"><label for="wdhj2"> SOC 210</label>
+
+</fieldset>
+
+<fieldset>
+<legend>Mathematics</legend>
+<input type="checkbox" name="program" value="wdmat" id="wdmat"><label for="wdmatj1"> MAT 121</label>
+
+</fieldset>
+<br>
+<button class="print" onclick="printForm();">Print</button>
+</form>
+
+
+</div>
+<footer>CCC IT Department</footer>
+
+<script>
+function printForm() {
+    window.print();
+    return false;
+}
+</script>
+</body>
+
+</html>
