@@ -47,6 +47,16 @@ footer{
 	font-size: 30px;
 }
 
+section{
+  display: inline-block;
+  width: 200px;
+}
+
+h2{
+	font-size: 16px;
+	font-weight: bold;
+}
+
 @media print{
 * {
     -webkit-transition: none !important;
@@ -104,6 +114,36 @@ $(".dmform, .isform, .nmform, .ssform, .wdform").hide();
           };
           return false;
 });
+	var curYear = (new Date).getFullYear();
+  $('.year').text(curYear);
+  $('.yearp1').text(curYear+1);
+  
+  $('.addtolist').on('click', function(){
+    var semChoice = $( "input[name=semester]:checked" ).val();
+    var courseAdd = $(".suggested").val();
+    
+    if (semChoice === "su1"){
+      $( ".sum1" ).append("<li>" + courseAdd + "</li>");
+      $(".suggested").val("");
+      return false;
+    }
+    else if(semChoice === "fa1"){
+      $( ".fall1" ).append("<li>" + courseAdd + "</li>");
+      $(".suggested").val("");
+      return false;
+    }
+    else if(semChoice === "sp1"){
+      $( ".spr1" ).append("<li>" + courseAdd + "</li>");
+      $(".suggested").val("");
+      return false;
+    }
+    
+    else {
+      $( ".sum2" ).append("<li>" + courseAdd + "</li>");
+      $(".suggested").val("");
+      return false;
+    }
+  });
 
 });
 </script>
@@ -497,9 +537,48 @@ $(".dmform, .isform, .nmform, .ssform, .wdform").hide();
 <input type="checkbox" name="program" value="wdmat" id="wdmat"><label for="wdmatj1"> MAT 121</label>
 
 </fieldset>
+</form>
+<form>
+<input id="suggested" class="suggested" type="text"><br>
+  <input type="radio" name="semester" value="su1" id="su1"><label for="su1">This Summer</label><br>
+  <input type="radio" name="semester" value="fa1"  id="fa1"><label for="fa1">Fall</label><br>
+  <input type="radio" name="semester" value="sp1" id="sp1"><label for="sp1">Spring</label><br>
+  <input type="radio" name="semester" value="su2" id="su2"><label for="su2">Next Summer</label><br><br>
+  <button class="addtolist">Add to Suggested</button>
+ 
+
+<br>
+<div>
+      <section>
+        <h2>Summer <span class="year"></span></h2>
+    <ul class="sum1">
+      
+    </ul>
+  </section>
+  <section>
+    <h2>Fall <span class="year"></span></h2>
+    <ul class="fall1">
+      
+    </ul>
+  </section>
+    <section>
+    <h2>Spring <span class="yearp1"></span></h2>
+    <ul class="spr1">
+      
+    </ul>
+  </section>
+    <section>
+    <h2>Summer <span class="yearp1"></span></h2>
+    <ul class="sum2">
+      
+    </ul>
+  </section>
+  
+</div>
+</form>
 <br>
 <button class="print" onclick="printForm();">Print</button>
-</form>
+
 
 
 </div>
